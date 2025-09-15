@@ -14,7 +14,7 @@ int nCr(int n, int r){
     return fact(n)/(fact(r)*fact(n-r));
 }
 
-//creating function for permuatation
+//creating function for permutation
 int nPr(int n, int r){
     return fact(n)/fact(n-r);
 }
