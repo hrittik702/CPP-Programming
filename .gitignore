@@ -1,3 +1,7 @@
-.exe
-.out
-.o
+# Compiled output files
+*.exe
+*.out
+*.o
+
+# VS Code specific files
+.vscode/
