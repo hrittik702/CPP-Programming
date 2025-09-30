@@ -55,5 +55,4 @@ int main(){
     atomic.setName;
     atomic.setPrice;
 
-
 }

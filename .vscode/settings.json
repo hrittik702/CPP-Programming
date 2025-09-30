@@ -104,5 +104,11 @@
     "streambuf": "cpp",
     "typeinfo": "cpp"
   },
-  "C_Cpp.errorSquiggles": "disabled"
+  "C_Cpp.errorSquiggles": "disabled",
+  "cSpell.words": [
+    "abhishek",
+    "hrittik",
+  ],
+  "code-runner.runInTerminal": true
 }
+

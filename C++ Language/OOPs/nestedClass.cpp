@@ -14,11 +14,11 @@ class Gun{
         int ammo;
         int scope;
         int damage;
-    private :
+    public :
         //setter
         void setAmmo(int ammo) {
             this->ammo = ammo;
-        }
+        } 
         void setScope(int scope) {
             this->scope = scope;
         }
@@ -34,6 +34,32 @@ class Gun{
         }
         int getDamage(){
             return damage;
+        }
+};
+
+class Bag {
+    private : 
+        int level;
+        int storage;
+    public :
+        //constructor
+        Bag(int level, int storage){
+            this->level=level;
+            this->storage=storage;
+        }    
+        //setter
+        void setLevel(int level){
+            this->level=level;
+        }
+        void setStorage(int storage){
+            this->storage=storage;
+        }
+        //getter
+        int getLevel(){
+            return level;
+        }
+        int getStorage(){
+            return storage;
         }
 };
 
@@ -90,7 +116,7 @@ class Player{
 //execution part
 int main(){
     Gun akm;
-    Player hrittik(23,78,96,akm);
+    Player hrittik(23,78,96,akm.getAmmo());
     hrittik.getInfo();
-
+    
 }

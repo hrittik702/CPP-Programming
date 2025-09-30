@@ -6,4 +6,5 @@ int main(){
     getline(cin,name);
     cout<<"Hi "<<name;
     return 0;
+    
 }
