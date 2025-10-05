@@ -44,8 +44,8 @@ class Bag {
     public :
         //constructor
         Bag(int level, int storage){
-            this->level=level;
-            this->storage=storage;
+            this -> level=level;
+            this -> storage=storage;
         }    
         //setter
         void setLevel(int level){
