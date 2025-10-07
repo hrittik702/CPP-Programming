@@ -14,17 +14,30 @@ int main(){
     int n=8;
     int arr[n+1] = {2,5,4,3,7,6,2,1};
     // duplicate element
-    // M-1 Brute force method
-    bool flag=false;
-    for(int i=0; i<n+1; i++){
-        for(int j=i+1; j<n+1; j++){
-            if(arr[j]==arr[i]){
-                cout<<"Duplicate element : "<<arr[j]<<endl;
-                flag = true;
-                break;
-            }
-        }
-        if(flag==true) break;
-    }
+    // // M-1 Brute force method
+    // bool flag=false;
+    // for(int i=0; i<n+1; i++){
+    //     for(int j=i+1; j<n+1; j++){
+    //         if(arr[j]==arr[i]){
+    //             cout<<"Duplicate element : "<<arr[j]<<endl;
+    //             flag = true;
+    //             break;
+    //         }
+    //     }
+    //     if(flag==true) break;
+    // }
 
+    //M-2 - Using Math's to find the duplicate element
+    int s1=(7*(7+1))/2;
+    int s2=0;
+    for(int i=0; i<=n;i++){
+        s2+=arr[i];
+    } 
+    int duplicate = s2-s1;
+    cout<<"Duplicate element : "<<duplicate<<endl;
+    
+    auto stop = high_resolution_clock :: now();
+    auto duration = duration_cast<microseconds>(start-stop);
+    cout<<"Time Taken : "<<duration.count()<<" microseconds"<<endl;
+    return 0;
 }
