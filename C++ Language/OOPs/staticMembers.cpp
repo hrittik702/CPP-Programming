@@ -1,111 +1,52 @@
-#include <isotream>
+#include <iostream>
 #include <string>
+
 using namespace std;
-//class Gun
-class Gun{
-    private :
-        static int ammo = 30;
-        int scope;
-        int damage;
-    public :
-        //setter
-        // void setAmmo(int ammo) {
-        //     this->ammo = ammo;
-        // } 
-        void setScope(int scope) {
-            this->scope = scope;
+
+// This example demonstrates the use of static members in a class.
+class Gun {
+public:
+    // A static member variable is shared by all objects of the class.
+    // It is declared inside the class, but defined outside.
+    static int totalAmmo;
+
+private:
+    string model;
+
+public:
+    Gun(string model) {
+        this->model = model;
+    }
+
+    void shoot() {
+        if (totalAmmo > 0) {
+            totalAmmo--;
+            cout << model << " fired. Remaining ammo: " << totalAmmo << endl;
+        } else {
+            cout << model << " cannot fire. No ammo left." << endl;
         }
-        void setDamage(int damage) {
-            this->damage = damage;
-        }
-        //getter
-        static int getAmmo(){
-            return ammo;
-        }
-        int getScope(){
-            return scope;
-        }
-        int getDamage(){
-            return damage;
-        }
+    }
 };
 
-class Bag {
-    private : 
-        int level;
-        int storage;
-    public :
-        //constructor
-        Bag(int level, int storage){
-            this -> level=level;
-            this -> storage=storage;
-        }    
-        //setter
-        void setLevel(int level){
-            this->level=level;
-        }
-        void setStorage(int storage){
-            this->storage=storage;
-        }
-        //getter
-        int getLevel(){
-            return level;
-        }
-        int getStorage(){
-            return storage;
-        }
-};
+// Define and initialize the static member variable outside the class.
+int Gun::totalAmmo = 100;
 
-class Player{
-    private :
-        int age;
-        int score;
-        int health;
-        Gun gun;
-    public :
-        //constructor
-        Player(int age, int score, int health, Gun gun){
-            this->age=age;
-            this->score=score;
-            this->health=health;
-            this->gun=gun;
-        }
+int main() {
+    // Create two different Gun objects.
+    Gun akm("AKM");
+    Gun m416("M416");
 
-        //setter
-        void setAge(int age){
-            this->age = age;
-        }
-        void setScore(int score){
-            this->score = score;
-        }
-        void setHealth(int health){
-            this->health = health;
-        }
-        void setGun(Gun gun){
-            this->gun = gun;
-        }
-        //getter
-        int getAge(){
-            return age;
-        }
-        int getScore(){
-            return score;
-        }
-        int getHealth(){
-            return health;
-        }
-        Gun getGun(){
-            return gun;
-        }
-        //info
-        void getInfo(){
-            cout<<age<<endl;
-            cout<<score<<endl;
-            cout<<health<<endl;
-            // cout<<gun.<<endl;
-        }
+    cout << "Initial shared ammo: " << Gun::totalAmmo << endl; // Access static member using the class name
 
-};
+    // Both objects share the same ammo pool.
+    akm.shoot();
+    m416.shoot();
+
+    cout << "Final shared ammo: " << Gun::totalAmmo << endl;
+
+    return 0;
+}
+
 
 
 

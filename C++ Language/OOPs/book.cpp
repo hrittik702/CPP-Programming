@@ -1,58 +1,45 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
-// class book{
-//     private:
-//         char name;
-//         int price;
-//         int pages;
-//     public:
-//         int countBooks(int x){
-//             if(price<x) return 1;
-//             else return 0;
-//         };
-//         bool isBookPresent(char title){
-//             if(title == name) return 1;
-//             else return 0;
-//         }
-//         void setName(char n){
-//             name = n;
-//         }
-//         void setPrice(int y){
-//             price = y;
-//         }
-//         void setPage(int v){
-//             pages = v;
-//         }
-// }
 
-int main(){
-    class book{
-    private:
-        char name;
-        int price;
-        int pages;
-    public:
-        int countBooks(int x){
-            if(price<x) return 1;
-            else return 0;
-        };
-        bool isBookPresent(char title){
-            if(title == name) return 1;
-            else return 0;
-        }
-        void setName(char n){
-            name = n;
-        }
-        void setPrice(int y){
-            price = y;
-        }
-        void setPage(int v){
-            pages = v;
-        }
+// Defines a class to represent a book.
+class Book {
+private:
+    string title;
+    int price;
+    int pages;
+
+public:
+    // Constructor to initialize the Book object.
+    Book(string title, int price, int pages) {
+        this->title = title;
+        this->price = price;
+        this->pages = pages;
     }
-    book.atomic;
-    atomic.setPage;
-    atomic.setName;
-    atomic.setPrice;
 
+    // Method to display the book's details.
+    void display() {
+        cout << "Title: " << title << endl;
+        cout << "Price: $" << price << endl;
+        cout << "Pages: " << pages << endl;
+    }
+
+    // Method to check if the book price is less than a given amount.
+    bool isPriceLessThan(int amount) {
+        return price < amount;
+    }
+};
+
+int main() {
+    // Create an instance of the Book class.
+    Book atomicHabits("Atomic Habits", 20, 320);
+
+    // Use the object's methods.
+    atomicHabits.display();
+    
+    cout << "\nIs the price less than $25? " 
+         << (atomicHabits.isPriceLessThan(25) ? "Yes" : "No") << endl;
+
+    return 0;
 }
