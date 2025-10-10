@@ -1,12 +1,23 @@
 #include <iostream>
+
 using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=n; j++){
-            cout<<"* ";
+
+// This program prints a solid square of stars.
+// Example for size 4:
+// * * * *
+// * * * *
+// * * * *
+// * * * *
+int main() {
+    int size;
+    cout << "Enter the size of the square: ";
+    cin >> size;
+
+    for (int row = 1; row <= size; row++) {
+        for (int col = 1; col <= size; col++) {
+            cout << "* ";
         }
-        cout<<endl;
+        cout << endl;
     }
+    return 0;
 }

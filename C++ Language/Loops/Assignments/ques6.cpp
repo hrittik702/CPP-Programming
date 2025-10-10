@@ -1,16 +1,23 @@
 #include <iostream>
+
 using namespace std;
-int main(){
-    int n,m;
-    cout<<"Enter m : ";
-    cin>>m;
-    cout<<"Enter n : ";
-    cin>>n;
-    for(int i=1; i<=m; i++){
-        for(int j=1; j<=i; j++){
-            cout<<"* ";
+
+// This program prints a right-angled triangle of stars.
+// Example for rows 4:
+// *
+// * *
+// * * *
+// * * * *
+int main() {
+    int rows;
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+
+    for (int row = 1; row <= rows; row++) {
+        for (int col = 1; col <= row; col++) {
+            cout << "* ";
         }
-        cout<<endl;
+        cout << endl;
     }
-    
+    return 0;
 }

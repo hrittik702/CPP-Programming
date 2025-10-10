@@ -1,23 +1,27 @@
 #include <iostream>
+
 using namespace std;
-int main(){
-    int n;
-    cout<<"Enter n : ";
-    cin>>n;
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=6;j++){
-            if(i==1||j==1||i==n){
-                cout<<j<<" ";
-            } else if (j==6){
-                cout<<n<<" ";
+
+// This program prints a hollow square pattern of numbers.
+int main() {
+    int size;
+    cout << "Enter the size of the square: ";
+    cin >> size;
+
+    // Loop through each row.
+    for (int row = 1; row <= size; row++) {
+        // Loop through each column.
+        for (int col = 1; col <= size; col++) {
+            // Print a number if it's on the border (first row, last row, first col, or last col).
+            if (row == 1 || row == size || col == 1 || col == size) {
+                cout << col << " "; // Using 'col' for variety, could be 'row' or other patterns.
             } else {
-                cout<<"  ";
+                // Print spaces for the hollow inside.
+                cout << "  ";
             }
-        } 
-        cout<<endl;
+        }
+        cout << endl;
     }
+    return 0;
 }
-#Include <iostream>
-int main(){
-	printf
-}
+

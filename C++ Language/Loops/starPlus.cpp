@@ -1,22 +1,32 @@
 #include <iostream>
+
 using namespace std;
-int main(){
-    int n;
-    cout<<"Enter n : ";
-    cin>>n;
-    if(n%2!=0){
-        for(int i=1; i<=n; i++){
-            for(int j=1; j<=n; j++){
-                if((n+1)/2==j || ((n+1)/2==i)){
-                    cout<<"* ";
+
+// This program prints a plus (+) shape made of stars (*) in a grid.
+int main() {
+    int size;
+    cout << "Enter an odd size for the grid: ";
+    cin >> size;
+
+    // The plus shape pattern only works correctly for grids with an odd size.
+    if (size % 2 != 0) {
+        int middle = (size / 2) + 1;
+        // Loop for each row.
+        for (int row = 1; row <= size; row++) {
+            // Loop for each column.
+            for (int col = 1; col <= size; col++) {
+                // Print a star if the current cell is in the middle row or middle column.
+                if (col == middle || row == middle) {
+                    cout << "* ";
                 } else {
-                    cout<<"  ";
+                    cout << "  "; // Print a space otherwise.
                 }
             }
-            cout<<endl;
+            cout << endl;
         }
     } else {
-        cout<<"Enter odd n";
+        cout << "Please enter an odd size to create a symmetrical plus shape." << endl;
     }
 
+    return 0;
 }
