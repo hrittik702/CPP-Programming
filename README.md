@@ -1,4 +1,4 @@
-# My C++ || Data Structures & Algorithms Learning Journey
+# My C++ & Data Structures Learning Journey
 
 ![C++](https://img.shields.io/badge/Language-C%2B%2B-blue.svg)
 
@@ -17,73 +17,18 @@ This repository documents my journey of learning C++ and fundamental Data Struct
 ## 🎯 Core Concepts Covered
 
 ### C++ Language Fundamentals
--   Basics of C++ (`cout,cin,return,main function etc`)
--   Conditionals (`if-else`)
--   Loops (`for`, `while`,`do-while`,`pattern printing`)
--   Functions (`creating functions`,`call function`,`call by reference`,`call by value`)
--   Pointers (`still learning`)
--   Object-Oriented Programming (OOPs) - (`stopped from Sept 19, 2025`)
+-   **Basics**: `cout`, `cin`, `main` function, etc.
+-   **Conditionals**: `if-else` statements.
+-   **Loops**: `for`, `while`, and pattern printing.
+-   **Functions**: Declaration, definition, call by value, and call by reference.
+-   **Pointers**: Basic pointer initialization and usage.
+-   **Object-Oriented Programming (OOPs)**: Classes, objects, constructors, destructors, and static members.
 
 ### Data Structures & Algorithms
-
-1. Arrays 
-		a. Initlization
-    - **a. Declare with a fixed size:**
-    
-        ```cpp
-        int array_name[10]; // Declares an array for 10 integers. Values are not initialized (garbage).
-        ```
-    
-	- **b. Declare and initialize with a list:**    
-        ```cpp
-        int array_name[] = {1, 2, 3, 4, 5}; // Size is automatically inferred as 5.
-        ```
-    
-    - **c. Initialize all elements to zero:**
-        ```cpp
-        int array_name[10] = {0}; // A common way to initialize all elements of an integer array to 0.
-        ```
-        
-1. **Accessing Elements & Getting Size**
-    - Elements are accessed using the index operator `[]`, which starts from `0`.
-        
-        ```cpp
-        array_name[0] = 99; // Assigns 99 to the first element.
-        int value = array_name[2]; // Accesses the third element.
-        ```
-        
-    - You can get the number of elements using the `sizeof` operator.
-        ```cpp
-        int size = sizeof(array_name) / sizeof(array_name[0]);
-        ```
-        
-		b. **Array Input**
-    - A `for` loop is typically used to take input for each element one by one.
-        ```cpp
-        int my_array[5];
-        int n = 5;
-        for(int i=0; i<n; i++) {
-            cin >> my_array[i];
-        }
-        ```
-        
-
-```
-
-2. Vectors
-```markdown
-1. Vector initilization
-   a. vector <int> vector_name 
-   b. vector <int> vector_name(size of vector); //it can be treated as array, each = 0
-	  vector <int> vectot_name(size of vector, 7) // each element = 7
-2. vector operations like - push_back(),pull_back(), at(), 
-3. vector input - 
-	   int x;
-	   for(int i=0; i<5; i++) vector_name.push_back((cin>>x,x));
-     
-```
-
-3. 
+-   **Arrays**: Initialization, accessing elements, and passing to functions.
+-   **Vectors**: Dynamic arrays, `push_back`, `pop_back`, and sorting.
+-   **Stack**: Basic implementation using an array.
+-   **Time & Space Complexity**: Analysis of algorithms (e.g., finding duplicate elements).
 
 ---
 
@@ -98,60 +43,104 @@ This section mirrors the repository's structure. Each entry links to the relevan
 
 -   `absolute_number.cpp`: Converts a negative number to its absolute value.
 -   `odd_even.cpp`: Checks if a number is odd or even.
--   `profit_loss.cpp`: Calculates profit or loss based on cost and selling price.
+-   `profit_loss.cpp`: Calculates profit or loss.
 </details>
 
 <details>
 <summary><strong>Loops</strong> (Click to expand)</summary>
 
+-   `ap.cpp`: Generates terms of an arithmetic progression.
+-   `aPowerb.cpp`: Calculates `a` raised to the power of `b`.
 -   `count_digits.cpp`: Counts the number of digits in an integer.
--   `hollow_number.cpp`: Prints a hollow number pattern.
--   `numerical_pattern.cpp`: Demonstrates various numerical pattern printing using nested loops.
--   `Assignments/`: Contains solutions to various loop-based practice problems.
+-   `starPlus.cpp`: Prints a star plus pattern.
+-   `Assignments/`: Solutions to various loop-based practice problems.
 </details>
 
 <details>
 <summary><strong>Functions</strong> (Click to expand)</summary>
 
--   `declaration_of_function.cpp`: Basic syntax for declaring and defining functions.
--   `pascal'sTriangle.cpp`: Implements Pascal's Triangle using functions.
+-   `pascalsTriangle.cpp`: Implements Pascal's Triangle.
 -   `permutationAndCombination.cpp`: Calculates nCr and nPr.
+-   `nth_term.cpp`: Finds the nth term of an arithmetic progression.
 </details>
 
 <details>
 <summary><strong>Pointers</strong> (Click to expand)</summary>
 
--   `pointerInitialize.cpp`: Covers the basics of pointer declaration and initialization.
+-   `pointerInitialize.cpp`: Basics of pointer declaration and initialization.
 -   `sumPointer.cpp`: Uses pointers to find the sum of two numbers.
+-   `first_last_digit.cpp`: Finds the first and last digit of a number using pointers.
 </details>
 
----
+<details>
+<summary><strong>OOPs</strong> (Click to expand)</summary>
+
+-   `rectangle.cpp`: A `Rectangle` class with methods for area and perimeter.
+-   `circle.cpp`: A `Circle` class to calculate area and circumference.
+-   `destructor.cpp`: Demonstrates the use of destructors.
+-   `staticMembers.cpp`: Example of using static members in a class.
+</details>
 
 ### 2. Data Structures & Algorithm
 
 <details>
-<summary><strong>Arrays</strong> (Click to expand)</summary>
+<summary><strong>Arrays & Vectors</strong> (Click to expand)</summary>
 
--   `linearSearch.cpp`: Implements a basic linear search algorithm.
--   `maxElement.cpp`: Finds the maximum element in an array.
--   `secondMaxElement.cpp`: Finds the second largest element in an array.
--   `passingArrayToFunctions.cpp`: Shows how to pass arrays as arguments to functions.
--   `pointerAndArray.cpp`: Explores the relationship between pointers and arrays.
--   `vector.cpp`: Introduction to using `std::vector` as a dynamic array.
+-   `linearSearch.cpp`: Implements a linear search algorithm.
+-   `maxElement.cpp` & `minElement.cpp`: Finds the maximum and minimum element in an array.
+-   `secondMaxElement.cpp`: Finds the second largest element.
+-   `passingArrayToFunctions.cpp`: Shows how to pass arrays as arguments.
+-   `operationsOfVector.cpp`: Demonstrates common vector operations.
+-   `Assignment 1/`: Solutions to array-based problems.
+</details>
+
+<details>
+<summary><strong>Stack</strong> (Click to expand)</summary>
+
+-   `implementationUsingArray.cpp`: A simple array-based implementation of a stack.
+</details>
+
+<details>
+<summary><strong>Time & Space Complexity</strong> (Click to expand)</summary>
+
+-   `duplicateElementInArray.cpp`: Different approaches to finding a duplicate element with complexity analysis.
+</details>
+
+### 3. LeetCode
+
+<details>
+<summary><strong>Problem Solutions</strong> (Click to expand)</summary>
+
+-   `Problem2221.cpp`: Solution for LeetCode problem 2221.
+-   `hello.cpp`: A simple "Hello World" program.
 </details>
 
 ---
 
 ## 🚀 How to Compile and Run
 
-All programs are written in C++. You can compile them using a C++ compiler like g++.
+All programs are written in C++. You can compile them using a C++ compiler like `g++`.
 
-```bash
-# Navigate to the file's directory
-cd "C++ Language/Loops"
+1.  **Navigate to the file's directory:**
+    ```bash
+    cd "Data Structures & Algorithm/Arrays & Vectors"
+    ```
 
-# Compile the program
-g++ count_digits.cpp -o count_digits.out
+2.  **Compile the program:**
+    ```bash
+    g++ linearSearch.cpp -o linearSearch.out
+    ```
 
-# Run the executable
-./count_digits.out
+3.  **Run the executable:**
+    ```bash
+    ./linearSearch.out
+    ```
+
+---
+
+## 🌟 Future Goals
+
+-   [ ] Implement more Data Structures (Linked Lists, Queues, Trees, Graphs).
+-   [ ] Solve more problems on LeetCode and other platforms.
+-   [ ] Learn more advanced C++ concepts.
+-   [ ] Explore different sorting and searching algorithms.
