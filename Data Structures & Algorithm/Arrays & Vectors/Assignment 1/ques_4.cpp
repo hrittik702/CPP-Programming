@@ -1,22 +1,52 @@
 //Given an array, predict if the array contains duplicates or not.
 #include <iostream>
+#include <vector>
+#include <algorithm> // For std::sort
+
 using namespace std;
-int main(){
-    cout<<"Enter size of array : ";
-    int n,num[(cin>>n,n)];
-    cout<<"Enter elements : ";
-    for(int i=0; i<n; i++) cin>>num[i];
-    int c;
-    for(int i=0; i<n; i++){
-        int count = 0;
-        int testcase = num[i];
-        for(int j=0; j<n;  j++){
-            if(testcase == num[j]) count++;
-        }
-        c = count;
+
+// This function checks if a vector contains any duplicate elements.
+bool containsDuplicate(vector<int>& numbers) {
+    if (numbers.size() < 2) {
+        return false;
     }
-    if(c>1) {
-            cout<<"Yes! Duplicates are present";
-    } else cout<<"nope";
+
+    // Sort the vector. This makes finding duplicates easier as they will be adjacent.
+    sort(numbers.begin(), numbers.end());
+
+    // Iterate through the sorted vector and check for adjacent duplicates.
+    for (int i = 0; i < numbers.size() - 1; i++) {
+        if (numbers[i] == numbers[i + 1]) {
+            return true; // Found a duplicate.
+        }
+    }
+
+    return false; // No duplicates found.
+}
+
+int main() {
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    if (size < 0) {
+        cout << "Size cannot be negative." << endl;
+        return 1;
+    }
+
+    vector<int> numbers(size);
+    if (size > 0) {
+        cout << "Enter " << size << " elements: " << endl;
+        for (int i = 0; i < size; i++) {
+            cin >> numbers[i];
+        }
+    }
+
+    if (containsDuplicate(numbers)) {
+        cout << "Yes, this array contains duplicate elements." << endl;
+    } else {
+        cout << "No, this array does not contain duplicate elements." << endl;
+    }
+
     return 0;
 }

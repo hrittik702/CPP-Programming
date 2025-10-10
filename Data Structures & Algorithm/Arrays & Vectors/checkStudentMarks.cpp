@@ -1,19 +1,42 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
-int main(){
-    int n;
-    cout<<"Enter no. of students : ";
-    int studentMarks[(cin>>n,n)]; 
-    //taking input of marks of students by using loop
-    for(int i=0; i<n; i++){
-        cout<<"Enter marks of student "<<i+1<<" : ";
-        cin>>studentMarks[i];
+
+// This program takes the marks of a number of students and then identifies
+// those who have scored below a passing threshold of 35.
+int main() {
+    int numStudents;
+    cout << "Enter the number of students: ";
+    cin >> numStudents;
+
+    if (numStudents <= 0) {
+        cout << "Please enter a positive number of students." << endl;
+        return 1;
     }
 
-    //for checking whose marks is less than 35
-    cout<<"Roll no. of students whose marks are less than 35"<<endl;
-    for(int j=0; j<n; j++){
-        if(studentMarks[j]<35) cout<<"Roll no. : "<<j+1<<endl;;
+    // Use a vector to store the marks.
+    vector<int> studentMarks(numStudents);
+
+    // Take input for the marks of each student.
+    for (int i = 0; i < numStudents; i++) {
+        cout << "Enter marks for student (Roll No. " << i + 1 << "): ";
+        cin >> studentMarks[i];
     }
+
+    // Check for students whose marks are less than 35.
+    cout << "\nStudents with marks less than 35:" << endl;
+    bool found = false;
+    for (int i = 0; i < numStudents; i++) {
+        if (studentMarks[i] < 35) {
+            cout << "- Roll No. " << i + 1 << " (Marks: " << studentMarks[i] << ")" << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "None" << endl;
+    }
+
     return 0;
 }

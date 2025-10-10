@@ -1,29 +1,47 @@
-//WAP to find the smallest missing positive element in the sorted Array that contains only
-// positive elements.
+// WAP to find the smallest missing positive element in the sorted Array that contains only positive elements.
 #include <iostream>
-#include <chrono>
-using namespace std::chrono;
+#include <vector>
+#include <algorithm> // For std::sort
+
 using namespace std;
-int main(){
-    cout<<"Enter size of array : ";
-    int n,num[(cin>>n,n)];
-    cout<<"Enter elements : ";
-    for(int i=0; i<n; i++) cin>>num[i];
-    //sorting
-    auto start = high_resolution_clock::now();  // start time
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            if(num[i]<num[j]){
-                int temp = num[i];
-                num[i] = num[j];
-                num[j] = temp;
-            }
+
+int findSmallestMissingPositive(vector<int>& numbers) {
+    // The core idea is to have a marker for the positive numbers we expect to see.
+    int expectedNumber = 1;
+    for (int number : numbers) {
+        // If we find the number we are expecting, we look for the next one.
+        if (number == expectedNumber) {
+            expectedNumber++;
         }
     }
-    for(int k=0; k<n; k++) cout<<num[k]<<" ";
-    cout<<endl;
-    auto stop = high_resolution_clock::now();   // end time
-    auto duration = duration_cast<microseconds>(stop - start);  
-    cout << "Time taken: " << duration.count() << " microseconds" << endl;
+    // The first number we didn't find is the smallest missing positive.
+    return expectedNumber;
+}
+
+int main() {
+    int size;
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    if (size < 0) {
+        cout << "Size cannot be negative." << endl;
+        return 1;
+    }
+
+    vector<int> numbers(size);
+    if (size > 0) {
+        cout << "Enter positive integer elements: " << endl;
+        for (int i = 0; i < size; i++) {
+            cin >> numbers[i];
+        }
+    }
+
+    // Sort the array first, as the problem implies it should be sorted.
+    sort(numbers.begin(), numbers.end());
+
+    int missing = findSmallestMissingPositive(numbers);
+
+    cout << "The smallest missing positive element is: " << missing << endl;
+
     return 0;
 }
