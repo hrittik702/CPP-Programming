@@ -1,56 +1,71 @@
 #include <iostream>
-using namespace std;
-//menu of program
-void menu(){
-        cout<<"------- Arithmetic Progression ----------"<<endl;
-        cout<<"1. Find nth term"<<endl;
-        cout<<"2. Give me term, i give nth pos."<<endl;
-        cout<<"3. Exit"<<endl;
-        cout<<endl;
-    }
 
-//nth_term
-int nth_term(int a, int d, int n){
-    return (a+(n-1)*d);
+using namespace std;
+
+// Displays the main menu for the user.
+void displayMenu() {
+    cout << "\n------- Arithmetic Progression Calculator -------" << endl;
+    cout << "1. Find the nth term" << endl;
+    cout << "2. Find the position of a given term" << endl;
+    cout << "3. Exit" << endl;
+    cout << "---------------------------------------------" << endl;
 }
 
-void nth_pos() {
-    int a, d, term;
-    cout << "Enter first term : ";
-    cin >> a;
-    cout << "Enter common difference : ";
-    cin >> d;
-    cout << "Enter the term you want to find position for : ";
+// Calculates the nth term of an AP using the formula: An = a + (n-1)*d
+int findNthTerm(int firstTerm, int commonDifference, int termNumber) {
+    return (firstTerm + (termNumber - 1) * commonDifference);
+}
+
+// Finds the position (n) of a given term in an AP.
+void findPositionOfTerm() {
+    int firstTerm, commonDifference, term;
+    cout << "Enter the first term (a): ";
+    cin >> firstTerm;
+    cout << "Enter the common difference (d): ";
+    cin >> commonDifference;
+    cout << "Enter the term to find its position: ";
     cin >> term;
 
-    if ((term - a) % d == 0) {
-        int n = ((term - a) / d) + 1;
-        cout << term << " is at position " << n << endl;
+    // The formula to find n is: n = ((An - a) / d) + 1
+    // We must check if (term - firstTerm) is divisible by d.
+    if (commonDifference != 0 && (term - firstTerm) % commonDifference == 0) {
+        int termNumber = ((term - firstTerm) / commonDifference) + 1;
+        if (termNumber > 0) {
+            cout << "The term " << term << " is at position " << termNumber << " in this AP." << endl;
+        } else {
+            cout << "This term does not exist in the positive sequence of this AP." << endl;
+        }
     } else {
-        cout << term << " is not in the given AP\n";
+        cout << "The term " << term << " is not part of this AP." << endl;
     }
 }
 
-int main(){
-    while (true){
-    menu();
-    int choice;
-    cout<<"Enter your choice : ";
-    cin>>choice;
-    //for calling functions
-    if(choice==1) {
-        int a,n,d;
-        cout<<"Enter first term : ";
-        cin>>a;
-        cout<<"Enter common difference : ";
-        cin>>d;
-        cout<<"Enter n : ";
-        cin>>n;
-        cout<<n<<"th term is "<<nth_term(a,d,n)<<endl;
-        cout<<endl;
+int main() {
+    while (true) {
+        displayMenu();
+        int choice;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            int firstTerm, commonDifference, termNumber;
+            cout << "Enter the first term (a): ";
+            cin >> firstTerm;
+            cout << "Enter the common difference (d): ";
+            cin >> commonDifference;
+            cout << "Enter the term number to find (n): ";
+            cin >> termNumber;
+            cout << "The " << termNumber << "th term is: " << findNthTerm(firstTerm, commonDifference, termNumber) << endl;
+        } else if (choice == 2) {
+            findPositionOfTerm();
+        } else if (choice == 3) {
+            cout << "Exiting program." << endl;
+            break;
+        } else {
+            cout << "Invalid choice. Please enter 1, 2, or 3." << endl;
+        }
     }
-    if(choice==2) nth_pos();
-    if(choice==3) break;
+    return 0;
 }
-}
+
 

@@ -1,56 +1,31 @@
 // Write a function to count the number of digits in a number and then print the square of this number.
 #include <iostream>
+#include <cmath> // For log10 and abs
+
 using namespace std;
-int count = 0;
-// int countDigits(int x){
-//     return 0;
-// }
 
-
-// //for decimal part
-// int countAfterDecimal(float n){
-//     //n=4063.5634
-//     int bd = n; //4063
-//     float ad = n-bd; //0.5634
-//     while(ad!=0){
-//         ad *= 10; //5.634
-//         int counter = ad; //5
-//         ad = ad - counter;
-//         count++;
-//     }
-//     return 0;
-// }
-
-int main(){
-    float n;
-    cout<<"Enter number : ";
-    cin>>n;
-    // countAfterDecimal(n);
-    count = 0;
-    int bd = n;
-    cout<<bd<<endl; //4063
-    float ad = n-bd; //0.5634
-    cout<<ad<<endl;
-    int a =4;
-    while(a>=0){
-        if(ad>=0){
-            ad *= 10; //5.634
-            cout<<ad<<endl;;
-            int counter = ad; //5
-            cout<<counter<<endl;
-            ad = ad - counter;
-            cout<<ad<<endl;
-            count++;
-            a--;
-        }
+// This function counts the number of digits in an integer.
+// Note: This implementation handles the integer part of a number only.
+int countDigits(int number) {
+    // If the number is 0, it has 1 digit.
+    if (number == 0) {
+        return 1;
     }
-    // while(ad<0){
-    //     ad *= 10; //5.634
-    //     int counter = ad; //5
-    //     ad = ad - counter;
-    //     count++;
-    //     cout<<count<<endl;
-    // }
-    cout<<count<<endl;
+    // Use log10 to find the number of digits. For example, log10(123) is 2.08, so adding 1 gives 3 digits.
+    // We use abs() to handle negative numbers correctly.
+    return floor(log10(abs(number))) + 1;
+}
+
+int main() {
+    int number;
+    cout << "Enter an integer: ";
+    cin >> number;
+
+    int digitCount = countDigits(number);
+    cout << "Number of digits: " << digitCount << endl;
+
+    long long squareOfCount = (long long)digitCount * digitCount;
+    cout << "The square of the digit count is: " << squareOfCount << endl;
+
     return 0;
 }

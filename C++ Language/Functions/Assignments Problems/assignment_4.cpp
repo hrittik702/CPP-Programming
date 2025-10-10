@@ -1,21 +1,31 @@
 #include <iostream>
+
 using namespace std;
 
-//waf to print all odd number between two numbers
-void odd_num(int x, int y){
-    for(int i=x; i<=y; i++){
-        if(i%2 != 0){
-            cout<<i<<" ";
-        } 
+// This function prints all odd numbers within a given range (inclusive).
+void printOddNumbersInRange(int start, int end) {
+    cout << "Odd numbers between " << start << " and " << end << " are: ";
+    for (int i = start; i <= end; i++) {
+        if (i % 2 != 0) {
+            cout << i << " ";
+        }
     }
+    cout << endl;
 }
 
-int main(){
-    int num1,num2;
-    cout<<"Enter number 1 : ";
-    cin>>num1;
-    cout<<"Enter number 2 : ";
-    cin>>num2;
-    odd_num(num1,num2);
+int main() {
+    int number1, number2;
+    cout << "Enter the starting number of the range: ";
+    cin >> number1;
+    cout << "Enter the ending number of the range: ";
+    cin >> number2;
+
+    // Ensure the range is from the smaller to the larger number.
+    if (number1 > number2) {
+        printOddNumbersInRange(number2, number1);
+    } else {
+        printOddNumbersInRange(number1, number2);
+    }
+
     return 0;
 }

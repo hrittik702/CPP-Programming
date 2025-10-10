@@ -1,17 +1,20 @@
 #include <iostream>
-#define pi 3.14159265359
+#include <cmath> // For M_PI constant
+
 using namespace std;
 
-//waf to print area and circumference of the circle
-void circle(float x){
-    cout<<"Area "<<pi*x*x<<endl;
-    cout<<"Circumference "<<2*pi*x;
+// This function calculates and prints the area and circumference of a circle.
+void printCircleProperties(float radius) {
+    // Area = PI * r^2
+    cout << "Area: " << M_PI * radius * radius << endl;
+    // Circumference = 2 * PI * r
+    cout << "Circumference: " << 2 * M_PI * radius << endl;
 }
 
-int main(){
+int main() {
     float radius;
-    cout<<"Enter radius of the circle : ";
-    cin>>radius;
-    circle(radius);
+    cout << "Enter the radius of the circle: ";
+    cin >> radius;
+    printCircleProperties(radius);
     return 0;
 }

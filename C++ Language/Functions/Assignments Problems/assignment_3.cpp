@@ -1,18 +1,20 @@
 #include <iostream>
+
 using namespace std;
 
-//waf to check eligibility of voting
-string vote(int age){
-    if(age>=18) cout<<"Yes";
-    if(age<18) cout<<"No";
+// A function to check if a person is eligible to vote based on their age.
+void checkVotingEligibility(int age) {
+    if (age >= 18) {
+        cout << "Yes, you are eligible to vote." << endl;
+    } else {
+        cout << "No, you are not eligible to vote yet." << endl;
+    }
 }
 
-int main(){
-    int age;
-    cout<<"Enter your age : ";
-    cin>>age;
-    vote(age);
+int main() {
+    int userAge;
+    cout << "Enter your age: ";
+    cin >> userAge;
+    checkVotingEligibility(userAge);
     return 0;
 }
-
-
