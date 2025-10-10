@@ -1,12 +1,20 @@
 #include <iostream>
+
 using namespace std;
-int main(){
-    int n;
-    cout<<"Enter no. : ";
-    cin>>n;
-    if(n%5!=0){
-        cout<<n<<" is odd no.";
+
+// This program checks if a given integer is even or odd.
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    // An even number is perfectly divisible by 2 (remainder is 0).
+    if (number % 2 == 0) {
+        cout << number << " is an even number." << endl;
     } else {
-        cout<<n<<" is even no.";
+        // If the remainder is not 0, the number is odd.
+        cout << number << " is an odd number." << endl;
     }
+
+    return 0;
 }
