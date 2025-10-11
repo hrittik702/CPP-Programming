@@ -67,12 +67,28 @@ void traverseData(){
     return;
 }
 
+void delFromBegin(){
+    struct node *t;
+    int n;
+    if(head==NULL){
+        printf("Empty !\n");
+        return;
+    }
+    n=head->data;
+    t=head->next;
+    free(head);
+    head = t;
+    printf("%d is deleted !\n",n);
+}
+
 void menu(){
     printf("\n         Linked List Menu        \n");
     printf("1. insert from begin\n");
     printf("2. insert from last\n");
     printf("3. print linked list\n");
-    printf("4. Exit\n\n");
+    printf("4. Delete form begin\n");
+    printf("5. Delete from last\n");
+    printf("6. Exit\n\n");
     printf("Choose option : ");
 }
 int main(){
@@ -93,6 +109,8 @@ int main(){
         } else if(choice==3){
             traverseData();
             printf("\n");
+        } else if(choice == 4){
+            delFromBegin();
         } else {
             printf("Exited !");
             break;
