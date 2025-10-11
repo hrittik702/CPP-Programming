@@ -36,7 +36,10 @@ void insertFromLast(int x){
 
     // //or hum direct insert form begin function ko call kr skte the
     // insertfromBegin(x);
-
+    if(head==NULL){
+        head = r;
+        return;
+    }
     //create a node q -> traverse it to last node
     struct node *q;
     q = head;
@@ -64,9 +67,36 @@ void traverseData(){
     return;
 }
 
+void menu(){
+    printf("\n         Linked List Menu        \n");
+    printf("1. insert from begin\n");
+    printf("2. insert from last\n");
+    printf("3. print linked list\n");
+    printf("4. Exit\n\n");
+    printf("Choose option : ");
+}
 int main(){
-    insertFromBegin(20);
-    insertFromBegin(40);
-    insertFromLast(5);
-    traverseData();
+    while (true){
+        menu();
+        int choice;
+        scanf("%d",&choice);
+        if(choice==1) {
+            int data;
+            printf("Enter element : ");
+            scanf("%d",&data);
+            insertFromBegin(data);
+        } else if(choice == 2){
+            int data;
+            printf("Enter element : ");
+            scanf("%d",&data);
+            insertFromLast(data);
+        } else if(choice==3){
+            traverseData();
+            printf("\n");
+        } else {
+            printf("Exited !");
+            break;
+        }
+    }
+    
 }
