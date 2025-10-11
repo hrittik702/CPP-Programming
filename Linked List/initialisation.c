@@ -30,8 +30,8 @@ void insertFromLast(int x){
     struct node *r;
     r = (struct node *)malloc(sizeof(struct node));
     r -> data = x;
-    r -> next = head;
-    head = r;
+    r -> next = NULL;
+    // head = r; -> this is the main problem of mistaken 
     printf("%d create into p node !\n",x);
 
     // //or hum direct insert form begin function ko call kr skte the
