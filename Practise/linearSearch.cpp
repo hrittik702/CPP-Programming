@@ -7,7 +7,7 @@ int main(){//for practise i take arr[] which almost cover all cases & constraint
     cout<<"Enter element : ";
     cin>>key;
 
-    //version 1 -> simple
+    //version 2 -> including constraints for double element
     int i;
     bool flag=false;
     for(i=0; i<size; i++){
