@@ -153,7 +153,7 @@ int main() {
     vector<int> arr;
     while (true) {
         menu();
-        int choice = readInt("Choose option: ";
+        int choice = readInt("Choose option: ");
         switch (choice) {
             case 1: createArray(arr); break;
             case 2: printArray(arr); break;
