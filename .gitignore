@@ -1,7 +1,29 @@
-# Compiled output files
+# Ignore Windows executables
 *.exe
+
+# Ignore common compiled outputs
 *.out
 *.o
+*.obj
 
-# VS Code specific files
+# Ignore all files without an extension
+*
+
+# Re-include directories
+!*/
+
+# Re-include source and important files
+!*.cpp
+!*.c
+!*.h
+!*.hpp
+!*.md
+!*.txt
+!*.json
+!*.yml
+!*.yaml
+!.gitignore
+
+# Ignore editor metadata
 .vscode/
+.obsidian/

@@ -2,7 +2,7 @@
 
 ![C++](https://img.shields.io/badge/Language-C%2B%2B-blue.svg)
 
-This repository documents my journey of learning C++ and fundamental Data Structures & Algorithms. It serves as a personal log of my progress, containing solutions to various problems and implementations of core concepts.
+It documents my Journey of learning C++ and Data Structures & Algorithms. It serves as a personal log of my progress, containing solutions to various problems and implementations of core concepts.
 
 ---
 
@@ -16,14 +16,16 @@ This repository documents my journey of learning C++ and fundamental Data Struct
 
 ## 🎯 Core Concepts Covered
 
+<details>
 ### C++ Language Fundamentals
+
 -   **Basics**: `cout`, `cin`, `main` function, etc.
 -   **Conditionals**: `if-else` statements.
 -   **Loops**: `for`, `while`, and pattern printing.
 -   **Functions**: Declaration, definition, call by value, and call by reference.
 -   **Pointers**: Basic pointer initialization and usage.
 -   **Object-Oriented Programming (OOPs)**: Classes, objects, constructors, destructors, and static members.
-
+</details>
 ### Data Structures & Algorithms
 -   **Arrays**: Initialization, accessing elements, and passing to functions.
 -   **Vectors**: Dynamic arrays, `push_back`, `pop_back`, and sorting.
